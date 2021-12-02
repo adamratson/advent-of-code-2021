@@ -18,16 +18,19 @@ int main()
 
 	int horizontal = 0;
 	int depth = 0;
+	int aim = 0;
 
 	while (fgets(chunk, sizeof(chunk), input) != NULL) {
 		if (chunk[0] == 'f') {
-			horizontal += chunk[8] - '0';
+			int value = chunk[8] - '0';
+			horizontal += value;
+			depth += aim * value;
 		}
 		else if (chunk[0] == 'd') {
-			depth += chunk[5] - '0';
+			aim += chunk[5] - '0';
 		}
 		else if (chunk[0] == 'u') {
-			depth -= chunk[3] - '0';
+			aim -= chunk[3] - '0';
 		}
 		else {
 			printf("Invalid character found");
