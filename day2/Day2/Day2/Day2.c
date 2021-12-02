@@ -1,5 +1,4 @@
 // Day2.c : This file contains the 'main' function. Program execution begins and ends there.
-//
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -14,13 +13,13 @@ int main()
 		exit(-1);
 	}
 
-	char chunk[128];
+	char chunk[11];
 
 	int horizontal = 0;
 	int depth = 0;
 	int aim = 0;
 
-	while (fgets(chunk, sizeof(chunk), input) != NULL) {
+	while (fgets(chunk, sizeof(chunk), input)) {
 		if (chunk[0] == 'f') {
 			int value = chunk[8] - '0';
 			horizontal += value;
@@ -33,7 +32,7 @@ int main()
 			aim -= chunk[3] - '0';
 		}
 		else {
-			printf("Invalid character found");
+			printf("Invalid character found.");
 			exit(-1);
 		}
 	}
